@@ -1,0 +1,21 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:2026.2.3
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=Europe/Rome
+    ports:
+      - "8123:8123"
+    restart: unless-stopped
+    networks:
+      - smarthome
+      - cloudflared
+networks:
+  smarthome:
+    external: true
+  cloudflared:
+    external: true
+

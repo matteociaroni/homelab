@@ -1,0 +1,6 @@
+.env
+tailscale/tailscale/
+immich/postgres/
+home_assistant/config/
+mosquitto/mosquitto/data/
+mosquitto/mosquitto/log/
